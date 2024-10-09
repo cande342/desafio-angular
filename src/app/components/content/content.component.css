@@ -3,49 +3,86 @@
     background-color: #1d1d1d; /* Fondo oscuro */
     padding: 20px;
     border-radius: 15px;
-  }
-  
-  /* Estilo de las tarjetas de personajes */
-  .rick-morty-card {
+}
+
+/* Estilo de las tarjetas de personajes */
+.rick-morty-card {
     background-color: #2c2c2c; /* Fondo de la tarjeta */
     border: 2px solid #76ff03; /* Borde verde neón */
     transition: transform 0.3s, box-shadow 0.3s;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(118, 255, 3, 0.3); /* Sombra verde neón suave */
-  }
-  
-  .rick-morty-card:hover {
+    margin: 10px; /* Espacio entre tarjetas */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.rick-morty-card:hover {
     transform: scale(1.05); /* Efecto de agrandar ligeramente al pasar el mouse */
     box-shadow: 0 0 25px rgba(118, 255, 3, 0.7); /* Sombra más fuerte al hacer hover */
-  }
-  
-  /* Estilo de la imagen en la tarjeta */
-  .rick-morty-card img {
+}
+
+/* Estilo de la imagen en la tarjeta */
+.rick-morty-card img {
     border-radius: 10px 10px 0 0; /* Redondear la parte superior */
-  }
-  
-  /* Título del personaje */
-  .rick-morty-card .card-title {
+    width: 100%; /* Hacer que la imagen ocupe todo el ancho */
+}
+
+/* Título del personaje */
+.rick-morty-card .card-title {
     color: #76ff03; /* Verde neón para los títulos */
     font-family: 'Orbitron', sans-serif; /* Fuente de estilo futurista */
     text-align: center;
-  }
-  
-  /* Texto de los detalles del personaje */
-  .rick-morty-card .card-text {
+}
+
+/* Texto de los detalles del personaje */
+.rick-morty-card .card-text {
     color: #fff; /* Texto en blanco */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fuente para el texto */
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Sombra en los textos */
-  }
-  
-  /* Responsive - ajustar los tamaños en pantallas pequeñas */
-  @media (max-width: 768px) {
+}
+
+/* Estilo del botón de búsqueda */
+.btn-primary {
+    background-color: #76ff03; /* Color verde neón */
+    border-color: #76ff03; /* Color de borde verde neón */
+}
+
+.btn-primary:hover {
+    background-color: #5efb00; /* Color más oscuro al pasar el mouse */
+    border-color: #5efb00; /* Color de borde más oscuro al pasar el mouse */
+}
+
+/* Responsive - ajustar los tamaños en pantallas pequeñas */
+@media (max-width: 768px) {
     .rick-morty-container {
-      padding: 10px;
+        padding: 10px; /* Ajustar el padding en pantallas pequeñas */
     }
     
     .rick-morty-card {
-      margin-bottom: 20px;
+        margin-bottom: 20px; /* Espacio entre tarjetas en pantallas pequeñas */
     }
-  }
-  
+}
+
+/* Animaciones para las tarjetas al cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Mover un poco hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Volver a la posición original */
+    }
+}
+
+.rick-morty-card {
+    animation: fadeIn 0.5s ease forwards; /* Añadir animación al cargar */
+    opacity: 0; /* Comenzar invisible para la animación */
+}
+
+/* Para hacer que cada tarjeta aparezca con un pequeño retraso */
+.rick-morty-card:nth-child(1) { animation-delay: 0.1s; }
+.rick-morty-card:nth-child(2) { animation-delay: 0.2s; }
+.rick-morty-card:nth-child(3) { animation-delay: 0.3s; }
+.rick-morty-card:nth-child(4) { animation-delay: 0.4s; }
+/* Continúa para más tarjetas según sea necesario */

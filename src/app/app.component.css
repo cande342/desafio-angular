@@ -8,7 +8,3 @@
     background-color: #1d1d1d; /* Fondo oscuro tipo Rick y Morty */
   }
   
-  router-outlet {
-    flex: 1; 
-    display: block;
-  }

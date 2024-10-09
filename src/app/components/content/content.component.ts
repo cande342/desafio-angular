@@ -7,10 +7,10 @@ import { Result } from 'src/app/models/character.model';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit, OnChanges {
-  @Input() characters: Result[] = [];  // Recibe los personajes desde el componente padre
-  @Input() searchTerm: string = '';     // Recibe el término de búsqueda desde el componente padre
-  @Input() currentPage: number = 1;     // Página actual, recibida del componente padre
-  @Input() charactersPerPage: number = 10; // Número de personajes a mostrar por página
+  @Input() characters: Result[] = [];
+  @Input() searchTerm: string = '';
+  @Input() currentPage: number = 1;
+  @Input() charactersPerPage: number = 10; 
 
   filteredCharacters: Result[] = [];
 
@@ -19,7 +19,7 @@ export class ContentComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.filterCharacters();  // Filtra personajes cuando cambie el término de búsqueda o la página
+    this.filterCharacters();
   }
 
   filterCharacters(): void {
@@ -28,7 +28,7 @@ export class ContentComponent implements OnInit, OnChanges {
         character.name.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     } else {
-      this.filteredCharacters = this.characters;  // Si no hay término de búsqueda, muestra todos
+      this.filteredCharacters = this.characters;
     }
   }
 

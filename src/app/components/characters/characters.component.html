@@ -1,1 +1,23 @@
-<p>characters works!</p>
+<div class="rick-morty-container">
+    <h2>Rick and Morty API</h2>
+    <div class="form-group">
+        <input type="text" class="form-control" [formControl]="searchTermControl" (input)="searchCharacters()" placeholder="Nombre del personaje">
+    </div>
+
+    <div class="character-container">
+        <div *ngFor="let character of characters?.results" class="rick-morty-card">
+            <img [src]="character.image" alt="{{ character.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ character.name }}</h5>
+                <p class="card-text">Estado: {{ character.status }}</p>
+                <p class="card-text">Especie: {{ character.species }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rick-morty-pagination">
+        <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <div>Page {{ currentPage }} from {{ totalPages }}</div>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+</div>

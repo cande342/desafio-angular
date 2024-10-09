@@ -1,0 +1,117 @@
+.rick-morty-container {
+    padding: 40px;
+    width: 80%;
+    background-color: #1d1d1d;
+    border-radius: 15px;
+    color: #76ff03; 
+    margin: auto;
+    text-align: center;
+}
+
+.rick-morty-container h2 {
+    font-family: 'Bungee', cursive;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.form-control::placeholder {
+    color: #ffff; 
+    opacity: 0.3; 
+}
+
+.form-control {
+    background-color: #2c2c2c; 
+    color: #76ff03;
+    border: 2px solid #76ff03; 
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.character-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.rick-morty-card {
+    background-color: #2c2c2c; 
+    border: 2px solid #76ff03; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(118, 255, 3, 0.3); 
+    margin: 10px;
+    width: calc(25% - 20px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.rick-morty-card img {
+    border-radius: 10px 10px 0 0;
+    width: 100%; 
+}
+
+.card-body {
+    padding: 15px; 
+}
+
+.card-title {
+    color: #76ff03;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+.card-text {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.rick-morty-pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rick-morty-pagination button {
+    background-color: #76ff03;
+    color: #1d1d1d; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.rick-morty-pagination button:disabled {
+    background-color: #555; 
+    cursor: not-allowed;
+}
+
+.rick-morty-pagination button:hover:not(:disabled) {
+    background-color: #5bff00; 
+}
+
+@media (max-width: 768px) {
+    .rick-morty-card {
+        width: calc(50% - 20px); 
+    }
+    
+    .rick-morty-container {
+        padding: 10px;
+    }
+}

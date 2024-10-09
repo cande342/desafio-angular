@@ -8,10 +8,10 @@ import { RMCharacter } from '../models/character.model';
 })
 export class CharactersService {
   private apiUrl = 'https://rickandmortyapi.com/api/character';
-  
+
   constructor(private _httpClient: HttpClient) { }
 
-  searchCharacters(name: string): Observable<RMCharacter> {
-    return this._httpClient.get<RMCharacter>(`${this.apiUrl}/?name=${name}`);
+  searchCharacters(name: string, page: number, itemsPerPage: number): Observable<RMCharacter> {
+    return this._httpClient.get<RMCharacter>(`${this.apiUrl}/?name=${name}&page=${page}`);
   }
 }

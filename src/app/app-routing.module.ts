@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CharactersComponent } from './components/characters/characters.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  //{ path: 'characters', component: CharactersComponent},
+  { path: 'characters', component: CharactersComponent},
   { path: '**', redirectTo: '/' },
 ];
 
