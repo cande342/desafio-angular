@@ -1,0 +1,21 @@
+<div class="container">
+    <app-filter (searchTerm)="onSearchTermChanged($event)" class="mt-10"></app-filter>
+  
+    <nav aria-label="Page navigation m-6">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="previousPage()" [attr.aria-disabled]="currentPage === 1">Previous</a>
+            </li>
+
+            <li class="page-item" *ngFor="let page of getVisiblePages()">
+                <a class="page-link" (click)="goToPage(page)" [class.active]="currentPage === page">{{ page }}</a>
+            </li>
+
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="nextPage()" [attr.aria-disabled]="currentPage === totalPages">Next</a>
+            </li>
+        </ul>
+    </nav>
+
+    <app-content [characters]="characters" [searchTerm]="searchTerm"></app-content>
+</div>
