@@ -1,0 +1,32 @@
+
+.container {
+    background-color: #0d0d0d; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.rick-morty-search {
+    border: 2px solid #76ff03;
+    background-color: #212121;
+    color: #fff;
+    transition: border-color 0.3s;
+}
+  
+.rick-morty-search:focus {
+    border-color: #4caf50;
+    color: #ffff;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7); 
+    outline: none; 
+}
+
+.rick-morty-search::placeholder {
+    color: #76ff03; 
+    opacity: 0.3; 
+}
+
+.rick-morty-search::placeholder:focus{
+    display: none;
+}

@@ -9,6 +9,7 @@ import { ContentComponent } from './components/content/content.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { CharactersComponent } from './components/characters/characters.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeComponent } from './components/home/home.component';
     HeaderComponent,
     FilterComponent,
     ContentComponent,
-    HomeComponent
+    HomeComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,
