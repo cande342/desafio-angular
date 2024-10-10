@@ -1,3 +1,9 @@
+:host {
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d; 
+    font-family: 'Roboto', sans-serif;
+}
 .rick-morty-home {
     padding: 40px;
     margin-top: 30px;
