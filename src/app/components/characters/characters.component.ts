@@ -15,7 +15,7 @@ export class CharactersComponent implements OnInit, OnDestroy {
   currentPage: number = 1;
   totalPages: number = 0;
   errorMessage: string = '';
-  searchTerm: string = ''; // Agregar esta propiedad para almacenar el término de búsqueda
+  searchTerm: string = ''; 
 
   private subscription: Subscription = new Subscription();
 
