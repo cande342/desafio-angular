@@ -1,11 +1,14 @@
 
 .footer {
     color: #ffff;
-    opacity: 0.5;
     text-align: center;
-    padding: 15px 0;
+    padding: 55px 0px;
     position: relative;
     bottom: 0;
     width: 100%;
     background-color: #1d1d1d; 
+}
+
+.footer p{
+    opacity: 0.5;
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { RMCharacter } from '../models/character.model';
 
 @Injectable({
@@ -12,6 +12,12 @@ export class CharacterService {
   constructor(private http: HttpClient) {}
 
   getCharacters(page: number = 1): Observable<RMCharacter> {
-    return this.http.get<RMCharacter>(`${this.apiUrl}/?page=${page}`);
+    return this.http.get<RMCharacter>(`${this.apiUrl}/?page=${page}`)
+      .pipe(
+        catchError(error => {
+          console.log('Hubo un error:', error.error.message);
+          return throwError(() => new Error('Error en la solicitud'));
+        })
+      );
   }
 }

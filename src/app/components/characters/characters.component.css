@@ -3,6 +3,13 @@
     padding: 20px;
 }
 
+.loading-indicator {
+    font-size: 18px; 
+    color: #76ff03; 
+    text-align: center;
+    margin: 20px 0; 
+  }
+
 .rick-morty-pagination {
     margin-top: 20px;
     display: flex;

@@ -1,5 +1,5 @@
 <div class="rick-morty-container">
-    <h2>Rick & Morty </h2>
+    <h2>Rick & Morty</h2>
     <form [formGroup]="searchForm" class="form-group">
         <input
             type="text"
@@ -8,5 +8,10 @@
             placeholder="Search Character..."
             aria-label="Search Character"
         />
+
+        <div class="error-message" *ngIf="searchForm.get('searchTerm')?.invalid && (searchForm.get('searchTerm')?.dirty )">
+            <div *ngIf="searchForm.get('searchTerm')?.errors?.['pattern']">Only letters and numbers are allowed.</div>
+        </div>
     </form>
 </div>
+

@@ -18,6 +18,7 @@
     width: 50%;
     margin: auto;
     margin-bottom: 20px;
+    flex-direction: column;
 }
 
 .form-control::placeholder {
@@ -42,6 +43,13 @@
 .form-control::placeholder:focus{
     display: none;
 }
+
+.error-message {
+    color: red; /* Cambia el color del texto a rojo */
+    margin-top: 5px; /* Espaciado entre el input y el mensaje de error */
+    font-size: 14px; /* Tamaño del texto */
+}
+
 
 
 @media (max-width: 768px) {
