@@ -1,4 +1,4 @@
-un# Rick & Morty 
+# Rick & Morty 
 
 Este proyecto es una aplicación web desarrollada en Angular que permite a los usuarios buscar personajes de la serie "Rick & Morty" por su nombre. Puedes visitarlo en el siguiente enlace: https://desafio-angular.netlify.app/
 
