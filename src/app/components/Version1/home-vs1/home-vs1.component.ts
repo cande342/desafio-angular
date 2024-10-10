@@ -7,6 +7,7 @@ import { CharacterService } from 'src/app/services/character.service';
   templateUrl: './home-vs1.component.html',
   styleUrls: ['./home-vs1.component.css']
 })
+
 export class HomeComponentVs1 implements OnInit {
   characters: Result[] = [];
   searchTerm: string = '';

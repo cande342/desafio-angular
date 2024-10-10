@@ -6,6 +6,7 @@ import { Result } from 'src/app/models/character.model';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
+
 export class ContentComponent implements OnInit, OnChanges {
   @Input() characters: Result[] = [];
   @Input() searchTerm: string = '';

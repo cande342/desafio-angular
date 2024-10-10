@@ -8,6 +8,7 @@ import { CharactersService } from 'src/app/services/characters.service';
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css']
 })
+
 export class CharactersComponent implements OnInit, OnDestroy {
   //Este es el compontente principal, el que maneja toda la logica del servicio y pasa datos a Search y List.
 

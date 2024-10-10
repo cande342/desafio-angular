@@ -8,6 +8,7 @@ import { CharacterService } from 'src/app/services/character.service';
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css']
 })
+
 export class FilterComponent implements OnInit {
   filterForm: FormGroup;
   characters: Result[] = []; 
