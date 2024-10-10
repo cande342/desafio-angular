@@ -3,11 +3,11 @@ import { Result } from 'src/app/models/character.model';
 import { CharacterService } from 'src/app/services/character.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home-vs1',
+  templateUrl: './home-vs1.component.html',
+  styleUrls: ['./home-vs1.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponentVs1 implements OnInit {
   characters: Result[] = [];
   searchTerm: string = '';
   currentPage: number = 1;
@@ -54,16 +54,13 @@ export class HomeComponent implements OnInit {
     const totalVisiblePages = 5;
     let startPage: number;
 
-    // Calcular el inicio de las páginas visibles
     if (this.currentPage <= Math.ceil(totalVisiblePages / 2)) {
-      startPage = 1; // Si la página actual está en la primera mitad
+      startPage = 1;
     } else if (this.currentPage + Math.floor(totalVisiblePages / 2) >= this.totalPages) {
-      startPage = this.totalPages - totalVisiblePages + 1; // Si está en la última mitad
+      startPage = this.totalPages - totalVisiblePages + 1;
     } else {
-      startPage = this.currentPage - Math.floor(totalVisiblePages / 2); // Página central
+      startPage = this.currentPage - Math.floor(totalVisiblePages / 2);
     }
-
-    // Generar las páginas visibles
     for (let i = 0; i < totalVisiblePages; i++) {
       if (startPage + i <= this.totalPages) {
         visiblePages.push(startPage + i);

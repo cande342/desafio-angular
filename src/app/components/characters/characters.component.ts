@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { RMCharacter } from 'src/app/models/character.model';
+import { Component, OnInit } from '@angular/core';
+import { Result, RMCharacter } from 'src/app/models/character.model';
 import { CharactersService } from 'src/app/services/characters.service';
 
 @Component({
@@ -8,23 +7,28 @@ import { CharactersService } from 'src/app/services/characters.service';
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css']
 })
-export class CharactersComponent {
-  searchForm: FormGroup;
-  characters: RMCharacter | null = null;
+
+export class CharactersComponent implements OnInit {
+  characters: Result[] | null = null;
   currentPage: number = 1;
   totalPages: number = 0;
-  itemsPerPage: number = 10; 
 
-  constructor(private fb: FormBuilder, private charactersService: CharactersService) {
-    this.searchForm = this.fb.group({
-      searchTerm: ['']
+  constructor(private charactersService: CharactersService) {}
+
+  ngOnInit(): void {
+    this.loadCharacters();
+  }
+
+  loadCharacters(searchTerm: string = ''): void {
+    this.charactersService.searchCharacters(searchTerm, this.currentPage).subscribe((data: RMCharacter) => {
+      this.characters = data.results;
+      this.totalPages = data.info.pages;
     });
   }
 
-  searchCharacters(): void {
-    const searchTerm = this.searchForm.get('searchTerm')?.value;
-    this.charactersService.searchCharacters(searchTerm, this.currentPage, this.itemsPerPage).subscribe(data => {
-      this.characters = data;
+  onSearch(searchTerm: string): void {
+    this.charactersService.searchCharacters(searchTerm, this.currentPage).subscribe(data => {
+      this.characters = data.results;
       this.totalPages = data.info.pages; 
     });
   }
@@ -32,18 +36,14 @@ export class CharactersComponent {
   nextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
-      this.searchCharacters();
+      this.loadCharacters();
     }
   }
 
   previousPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
-      this.searchCharacters(); 
+      this.loadCharacters();
     }
-  }
-
-  get searchTermControl(): FormControl {
-    return this.searchForm.get('searchTerm') as FormControl;
   }
 }

@@ -11,7 +11,7 @@ export class CharactersService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  searchCharacters(name: string, page: number, itemsPerPage: number): Observable<RMCharacter> {
+  searchCharacters(name: string, page: number): Observable<RMCharacter> {
     return this._httpClient.get<RMCharacter>(`${this.apiUrl}/?name=${name}&page=${page}`);
   }
 }

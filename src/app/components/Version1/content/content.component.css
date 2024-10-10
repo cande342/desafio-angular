@@ -1,0 +1,87 @@
+.rick-morty-container {
+    background-color: #1d1d1d; 
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+.rick-morty-card {
+    background-color: #2c2c2c; 
+    border: 2px solid #76ff03;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(118, 255, 3, 0.3); 
+    margin: 10px;
+}
+
+
+.rick-morty-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(118, 255, 3, 0.7);
+}
+
+
+.rick-morty-card img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+
+
+.rick-morty-card .card-title {
+    color: #76ff03;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+
+.rick-morty-card .card-text {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+
+.btn-primary {
+    background-color: #76ff03;
+    border-color: #76ff03;
+}
+
+.btn-primary:hover {
+    background-color: #5efb00;
+    border-color: #5efb00;
+}
+
+
+@media (max-width: 768px) {
+    .rick-morty-container {
+        padding: 10px;
+    }
+    
+    .rick-morty-card {
+        margin-bottom: 20px;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rick-morty-card {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+
+.rick-morty-card:nth-child(1) { animation-delay: 0.1s; }
+.rick-morty-card:nth-child(2) { animation-delay: 0.2s; }
+.rick-morty-card:nth-child(3) { animation-delay: 0.3s; }
+.rick-morty-card:nth-child(4) { animation-delay: 0.4s; }
+

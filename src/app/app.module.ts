@@ -5,11 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContentComponent } from './components/content/content.component';
-import { FilterComponent } from './components/filter/filter.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharactersComponent } from './components/characters/characters.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { ContentComponent } from './components/Version1/content/content.component';
+import { FilterComponent } from './components/Version1/filter/filter.component';
+import { HomeComponentVs1 } from './components/Version1/home-vs1/home-vs1.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -18,8 +21,11 @@ import { CharactersComponent } from './components/characters/characters.componen
     HeaderComponent,
     FilterComponent,
     ContentComponent,
-    HomeComponent,
-    CharactersComponent
+    HomeComponentVs1,
+    CharactersComponent,
+    SearchComponent,
+    CharacterListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
