@@ -9,6 +9,9 @@ import { CharactersService } from 'src/app/services/characters.service';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit, OnDestroy {
+  //Desde este componente manejamos toda la lógica del servicio, comunicando tanto al buscador como a 
+  //La lista de resultados.
+
   characters: Result[] | null = null;
   currentPage: number = 1;
   totalPages: number = 0;

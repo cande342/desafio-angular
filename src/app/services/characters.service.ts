@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { RMCharacter } from '../models/character.model';
 
+ //El servicio principal.
+
 @Injectable({
   providedIn: 'root'
 })

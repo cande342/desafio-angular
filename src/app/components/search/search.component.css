@@ -45,9 +45,9 @@
 }
 
 .error-message {
-    color: red; /* Cambia el color del texto a rojo */
-    margin-top: 5px; /* Espaciado entre el input y el mensaje de error */
-    font-size: 14px; /* Tamaño del texto */
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
 }
 
 
