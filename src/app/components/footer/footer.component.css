@@ -1,9 +1,4 @@
-:host {
-    margin: 0;
-    padding: 0;
-    background-color: #1d1d1d; 
-    font-family: 'Roboto', sans-serif;
-}
+
 .footer {
     color: #ffff;
     opacity: 0.5;
@@ -12,4 +7,5 @@
     position: relative;
     bottom: 0;
     width: 100%;
+    background-color: #1d1d1d; 
 }
