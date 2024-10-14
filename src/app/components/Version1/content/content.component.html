@@ -1,5 +1,7 @@
 <div class="container rick-morty-container">
     <div class="row">
+
+    <!-- Recorremos la lista de personajes filtrados (filteredCharacters) con *ngFor -->
       <div class="col-md-3 mb-4" *ngFor="let character of filteredCharacters">
         <div class="card rick-morty-card">
           <img [src]="character.image" class="card-img-top" alt="{{ character.name }}">

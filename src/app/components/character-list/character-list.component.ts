@@ -8,6 +8,7 @@ import { Result } from 'src/app/models/character.model';
 })
 
 export class CharacterListComponent {
+  //El componente sólo recibe la lista de personajes ya filtrados para mostrarla
   @Input() characters: Result[] | null = [];
 
 }

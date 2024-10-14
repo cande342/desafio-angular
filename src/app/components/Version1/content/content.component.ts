@@ -8,21 +8,30 @@ import { Result } from 'src/app/models/character.model';
 })
 
 export class ContentComponent implements OnInit, OnChanges {
+  //Este componente recibe la lista d personajes y luego un termino 
+  // Para filtrar en esa misma lista. 
+
   @Input() characters: Result[] = [];
   @Input() searchTerm: string = '';
-  @Input() currentPage: number = 1;
-  @Input() charactersPerPage: number = 10; 
 
+
+  //Acá se gaurdan los pjs a mostrar. Filtrados.
   filteredCharacters: Result[] = [];
 
   ngOnInit(): void {
     this.filterCharacters();
   }
 
+  //Está escuchando los input, cuando uno cambia (searchTerm), se vuelve a llamar a filtrar personajes.
   ngOnChanges(): void {
     this.filterCharacters();
   }
 
+
+// Este método filtra los personajes según el término de búsqueda.
+// Es decir, toma toda la lista de pjs disponibles que le dio homevs1, y entre ellos busca 
+//el término enviado por searchTerm. Es una desventaja, porque tiene que cargar sí o sí
+//Todos los personajes de la página antes de poder filtrarlos.
   filterCharacters(): void {
     if (this.searchTerm) {
       this.filteredCharacters = this.characters.filter(character => 
@@ -31,14 +40,5 @@ export class ContentComponent implements OnInit, OnChanges {
     } else {
       this.filteredCharacters = this.characters;
     }
-  }
-
-  get paginatedCharacters(): Result[] {
-    const startIndex = (this.currentPage - 1) * this.charactersPerPage;
-    return this.filteredCharacters.slice(startIndex, startIndex + this.charactersPerPage);
-  }
-
-  get totalFilteredPages(): number {
-    return Math.ceil(this.filteredCharacters.length / this.charactersPerPage);
   }
 }

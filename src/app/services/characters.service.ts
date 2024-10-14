@@ -13,6 +13,7 @@ export class CharactersService {
 
   constructor(private _httpClient: HttpClient) { }
 
+  //No sólo le pasamos la pagina, sino que también el termino.
   searchCharacters(name: string, page: number): Observable<RMCharacter> {
     return this._httpClient.get<RMCharacter>(`${this.apiUrl}/?name=${name}&page=${page}`)
       .pipe(

@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class SearchComponent implements OnInit {
+  //Simplificado: Formulario reactivo, al recibir un término o cuando este cambia
+  //va a emitir un evento 
   @Output() searchEvent = new EventEmitter<string>();
   searchForm: FormGroup;
 
@@ -23,6 +25,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Usamos una obsersvable para estar atentos al cambio
     this.searchForm.get('searchTerm')?.valueChanges.subscribe(value => {
       this.onSearch(value);
     });

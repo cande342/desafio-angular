@@ -1,10 +1,18 @@
 <div class="container-fluid rick-morty-home">
     <h1 class="rick-morty-title">Rick and Morty API</h1>
 
+
+<!-- Componente de filtro para la búsqueda: emite el evento 'searchTerm' al detectar un cambio en el filtro de búsqueda.
+    'onSearchTermChanged($event)' es el método que manejará el valor del término de búsqueda en el componente padre. -->
     <app-filter (searchTerm)="onSearchTermChanged($event)" class="mt-10"></app-filter>
 
+<!--Componente de contenido que muestra la lista de personajes: 
+    Se le pasa como entrada (input) el arreglo 'characters' y el término de búsqueda del filtro 'searchTerm'.
+    Ambos valores se actualizan en el componente padre (HomeComponentVs1) y se propagan al hijo (app-content). -->
     <app-content [characters]="characters" [searchTerm]="searchTerm"></app-content>
 
+
+    <!-- Nav de Bootstrap --> 
     <nav aria-label="Page navigation" class="rick-morty-pagination">
         <ul class="pagination justify-content-center m-0">
             <li class="page-item" [class.disabled]="currentPage === 1">

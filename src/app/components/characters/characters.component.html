@@ -1,5 +1,13 @@
 <div class="character-container">
+
+
+<!--Componente de búsqueda ('app-search') emite un evento llamado 'searchEvent' cuando el usuario introduce 
+    un término en el input, el método 'onSearch($event)' en el componente padre 
+    lo usa para el metodo LoadCharacter, se lo pasa como parámetro -->
     <app-search (searchEvent)="onSearch($event)"></app-search>
+
+<!--Componente que muestra la lista de personajes ('app-character-list'). 
+    El array 'characters' del componente padre se pasa como input a este componente hijo, que es responsable de mostrar los personajes. -->    
     <app-character-list [characters]="characters"></app-character-list>
   
     <div class="rick-morty-pagination">
@@ -11,5 +19,5 @@
       
       <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
     </div>
-  </div>
+</div>
   

@@ -9,8 +9,8 @@ import { CharacterService } from 'src/app/services/character.service';
 })
 
 export class HomeComponentVs1 implements OnInit {
-  characters: Result[] = [];
-  searchTerm: string = '';
+  characters: Result[] = []; //Creamos el arreglo p almacenar todos los Result q traiga el service
+  searchTerm: string = ''; //Acá guardamos lo q se escriba por el form
   currentPage: number = 1;
   totalPages: number = 0;
 
@@ -20,23 +20,30 @@ export class HomeComponentVs1 implements OnInit {
     this.loadCharacters();
   }
 
+// Método q llama al servicio y carga los pjs, si no le damos un parámetro
+// va a usar el valor de currentPage.
   loadCharacters(page: number = this.currentPage): void {
     this.characterService.getCharacters(page).subscribe(data => {
-      this.characters = data.results;
-      this.totalPages = data.info.pages;
+      this.characters = data.results; //Guardamos lo q trajo dentro de el array characters
+      this.totalPages = data.info.pages; //Actualiza el total de pages según lo que nos dice el servicio(interfaz: info)
     });
   }
 
+// Método q se va a llamar cada vez que cambie una letra en el buscador, basicamente un set
+// Le pasamos por parámetro el nuevo término introducido
   onSearchTermChanged(term: string): void {
     this.searchTerm = term;
   }
 
+//Avanzar a la siguiente, tiene una validacion para impedir que se exceda del total de paginas
+//Cuando avanza, cambia el valor de current page
   nextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
-      this.loadCharacters(this.currentPage);
+      this.loadCharacters(this.currentPage); //Acá llama al método central, que va a cargar los pjs de la nueva pagina.
     }
   }
+
 
   previousPage(): void {
     if (this.currentPage > 1) {
@@ -44,6 +51,9 @@ export class HomeComponentVs1 implements OnInit {
       this.loadCharacters(this.currentPage);
     }
   }
+
+ //Métodos específicos del navegador por página de Bootstrap: buscar x pagina y la cantidad de numeros que puedo elegir para 
+ //Cambiar (En este caso rango de 5)
 
   goToPage(page: number): void {
     this.currentPage = page;

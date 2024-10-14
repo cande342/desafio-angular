@@ -11,6 +11,7 @@ export class CharacterService {
 
   constructor(private http: HttpClient) {}
 
+  //El parámetro por defecto es 1
   getCharacters(page: number = 1): Observable<RMCharacter> {
     return this.http.get<RMCharacter>(`${this.apiUrl}/?page=${page}`)
       .pipe(
