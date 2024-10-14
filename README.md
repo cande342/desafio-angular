@@ -11,7 +11,7 @@ Este proyecto es una aplicación web desarrollada en Angular que permite a los u
 
 ## Tecnologías Usadas
 
-- [Angular](https://angular.io/) - Framework de desarrollo web.
+- [Angular](https://angular.io/) - Framework de desarrollo web.(versión 16)
 - [RxJS](https://rxjs.dev/) - Librería para programación reactiva.
 - [Bootstrap](https://getbootstrap.com/) - Framework CSS para diseño responsivo.
 - [API de Rick & Morty](https://rickandmortyapi.com/) - API para obtener datos de personajes.
